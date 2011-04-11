@@ -1,0 +1,64 @@
+@CHARSET "UTF-8";
+
+body
+{
+    font-size: 11px;
+}
+
+.clear
+{
+    clear: both;
+}
+
+/* Options Styling */
+body#options div#container
+{
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+}
+
+body#options div#container h1 sup
+{
+    font-size: 10px;
+    font-weight: normal;
+}
+
+body#options div#container div#sites div.left
+{
+    width: 375px;
+    float: left;
+}
+
+body#options div#container div#sites div.right
+{
+    width: 375px;
+    float: right;
+}
+
+body#options div.ui-dialog input
+{
+    border: 1px solid #b1c8e2;
+    background: #b1c8e2;
+    color: #2d025e;
+}
+
+/* Page Action Styling */
+body#page_action div#container
+{
+    padding: 15px;
+    background: #759BBD url(chrome-extension://npfganhiopgmejgdjgdbaljafeanjbel/css/images/ui-bg_diagonals-thick_10_759bbd_40x40.png) repeat 50% 50%;
+    color: #3A0854;
+}
+
+body#page_action div#container fieldset
+{
+    width: 300px;
+}
+
+body#page_action div#container fieldset input[type=text]
+{
+    border: 1px solid #b1c8e2;
+    background: #b1c8e2;
+    color: #2d025e;
+}

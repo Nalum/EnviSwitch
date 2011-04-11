@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>EnviSwitch :: Options</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.1.custom.css" />
+        <link rel="stylesheet" type="text/css" href="css/skin/ui.dynatree.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery.contextMenu.css">
+        <script type="text/javascript" src="js/json2.js"></script>
+        <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.8.1.custom.min.js"></script>
+        <script type="text/javascript" src="js/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="js/jquery.contextMenu.js"></script>
+        <script type="text/javascript" src="js/options.js"></script>
+    </head>
+    <body id="options">
+        <div id="container">
+            <h1>EnviSwitch <sup id="EnviSwitchVersion"></sup></h1>
+            <div id="tabs">
+                <ul>
+                    <li><a href="#sites">Manage Sites</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#credits">Credits</a></li>
+                </ul>
+                <div id="sites">
+                    <div class="left">
+                        <p><span class="ui-icon ui-icon-info" style="float: left; margin-right: 5px;"></span>Right Click EnviSwitch Root to start adding sites.</p>
+                        <div id="sitesTree"></div>
+                    </div>
+                    <div class="right">
+                        <p><span class="ui-icon ui-icon-info" style="float: left; margin-right: 5px;"></span>The sites below are all ignored by EnviSwitch.</p>
+                        <div id="ignoredSites"></div>
+                    </div>
+                    <br class="clear" />
+                </div>
+                <div id="about">
+                    <p>EnviSwitch(Environtment Switch).</p>
+                    <p>
+                        I have been looking for something to write for a while and thought this would be a good first attempt. The basic idea behind it is that you can
+                        set up a website folder which will then have multiple sites added to it. These sites should, idealy, be for the same domain
+                        e.g. www.testsite.com, test.testsite.com, dev.testsite.com, etc...
+                    </p>
+                </div>
+                <div id="credits">
+                    <p>Designed and Developed by Nalum with the following:</p>
+                    <ul>
+                        <li><a href="http://www.jquery.com" target="_blank">jQuery 1.4.2</a></li>
+                        <li><a href="http://www.jqueryui.com" target="_blank">jQuery UI 1.8.1</a> &amp; <a href="http://jqueryui.com/themeroller/#ffDefault=Verdana%2CArial%2Csans-serif&fwDefault=normal&fsDefault=1em&cornerRadius=2px&bgColorHeader=84a8b8&bgTextureHeader=18_hexagon.png&bgImgOpacityHeader=25&borderColorHeader=b1c8e2&fcHeader=2d025e&iconColorHeader=2d025e&bgColorContent=759bbd&bgTextureContent=08_diagonals_thick.png&bgImgOpacityContent=10&borderColorContent=759bbd&fcContent=3a0854&iconColorContent=3a0854&bgColorDefault=84a8b8&bgTextureDefault=12_gloss_wave.png&bgImgOpacityDefault=50&borderColorDefault=b1c8e2&fcDefault=2d025e&iconColorDefault=2d025e&bgColorHover=84a8b8&bgTextureHover=12_gloss_wave.png&bgImgOpacityHover=75&borderColorHover=b1c8e2&fcHover=2d025e&iconColorHover=2d025e&bgColorActive=84a8b8&bgTextureActive=12_gloss_wave.png&bgImgOpacityActive=90&borderColorActive=b1c8e2&fcActive=2d025e&iconColorActive=2d025e&bgColorHighlight=84a8b8&bgTextureHighlight=07_diagonals_medium.png&bgImgOpacityHighlight=25&borderColorHighlight=b1c8e2&fcHighlight=2d025e&iconColorHighlight=2d025e&bgColorError=f99f9f&bgTextureError=16_diagonal_maze.png&bgImgOpacityError=95&borderColorError=cd0a0a&fcError=cd0a0a&iconColorError=cd0a0a&bgColorOverlay=84a8b8&bgTextureOverlay=01_flat.png&bgImgOpacityOverlay=0&opacityOverlay=50&bgColorShadow=84a8b8&bgTextureShadow=08_diagonals_thick.png&bgImgOpacityShadow=75&opacityShadow=50&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px" target="_blank">EnviSwitch Theme</a></li>
+                        <li><a href="http://wwwendt.de/tech/dynatree" target="_blank">Dynatree 0.5.3</a></li>
+                        <li><a href="http://abeautifulsite.net/2008/09/jquery-context-menu-plugin/" target="_blank">Context Menu 1.01</a></li>
+                        <li><a href="http://www.famfamfam.com/lab/icons/silk/" target="_blank">Silk Icons 1.3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul id="enviSwitchRootMenu" class="contextMenu">
+            <li class="add"><a href="#add">Add Folder</a></li>
+            <li class="edit"><a href="#edit">Edit</a></li>
+            <li class="delete"><a href="#delete">Delete</a></li>
+        </ul>
+        <ul id="ignoredSitesRootMenu" class="contextMenu">
+            <li class="add"><a href="#add">Add Site</a></li>
+            <li class="edit"><a href="#edit">Edit</a></li>
+            <li class="delete"><a href="#delete">Delete</a></li>
+        </ul>
+        <ul id="enviSwitchFolderMenu" class="contextMenu">
+            <li class="add"><a href="#add">Add Environment</a></li>
+            <li class="edit"><a href="#edit">Edit Folder</a></li>
+            <li class="delete"><a href="#delete">Delete Folder</a></li>
+        </ul>
+        <ul id="enviSwitchDocumentMenu" class="contextMenu">
+            <li class="add"><a href="#add">Add</a></li>
+            <li class="edit"><a href="#edit">Edit Environment</a></li>
+            <li class="delete"><a href="#delete">Delete Environment</a></li>
+        </ul>
+        <ul id="ignoredSitesDocumentMenu" class="contextMenu">
+            <li class="add"><a href="#add">Add</a></li>
+            <li class="edit"><a href="#edit">Edit Site</a></li>
+            <li class="delete"><a href="#delete">Delete Site</a></li>
+        </ul>
+        <div id="add" title="Add Item" style="display: none;">
+            <label for="name">Name</label><br />
+            <input type="text" name="name" id="name" value="" /><br /><br />
+            <div id="addFolder">
+                <label for="url">Site Domain e.g. google.com</label><br />
+                http://<span id="wwwPrefix">www.</span><input type="text" name="url" id="url" value="" /><br /><br />
+            </div>
+            <div id="addSite" style="display: none;">
+                <label for="addSubDomainUrl">Site Address e.g. dev.google.com</label><br />
+                http://<span id="ipAddress"></span><input type="text" name="url" id="url" value="" style="width: 50px;" /><span id="siteName"></span><br /><br />
+                <label>Target</label><br />
+                <div id="addTarget">
+                    <input type="radio" name="addTarget" id="add_blank" /><label for="add_blank">Blank</label>
+                    <input type="radio" name="addTarget" id="add_self" checked /><label for="add_self">Self</label>
+                </div>
+                <br /><br />
+            </div>
+        </div>
+        <div id="addIgnored" title="Add Item" style="display: none;">
+            <p><span class="ui-icon ui-icon-info" style="float: left; margin-right: 5px;"></span>Enter www.google.com to ignore just www.google.com or google.com to ignore www.google.com, code.google.com etc...</p>
+            <label for="name">URL</label><br />
+            <input type="text" name="name" id="name" value="" /><br /><br />
+        </div>
+        <div id="edit" title="Edit Item" style="display: none;">
+            <label for="name">Name</label><br />
+            <input type="text" name="name" id="name" value="" /><br /><br />
+            <div id="editFolder">
+                <label for="url">Site Domain e.g. google.com</label><br />
+                http://<span id="wwwPrefix">www.</span><input type="text" name="url" id="url" value="" /><br /><br />
+            </div>
+            <div id="editSite" style="display: none;">
+                <label for="editSubDomainUrl">Site Address e.g. dev.google.com</label><br />
+                http://<span id="ipAddress"></span><input type="text" name="url" id="url" value="" style="width: 50px;" /><span id="siteName"></span><br /><br />
+                <label>Target</label><br />
+                <div id="editTarget">
+                    <input type="radio" name="editTarget" id="edit_blank" /><label for="edit_blank">Blank</label>
+                    <input type="radio" name="editTarget" id="edit_self" checked /><label for="edit_self">Self</label>
+                </div>
+                <br /><br />
+            </div>
+        </div>
+        <div id="editIgnored" title="Edit Item" style="display: none;">
+            <p><span class="ui-icon ui-icon-info" style="float: left; margin-right: 5px;"></span>Enter www.google.com to ignore just www.google.com or google.com to ignore www.google.com, code.google.com etc...</p>
+            <label for="name">URL</label><br />
+            <input type="text" name="name" id="name" value="" /><br /><br />
+        </div>
+    </body>
+</html>

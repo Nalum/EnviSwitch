@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>EnviSwitch :: Page Action</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.1.custom.css" />
+        <link rel="stylesheet" type="text/css" href="css/skin/ui.dynatree.css">
+        <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery-ui-1.8.1.custom.min.js"></script>
+        <script type="text/javascript" src="js/jquery.dynatree.js"></script>
+        <script type="text/javascript" src="js/page_action.js"></script>
+    </head>
+    <body id="page_action">
+        <div id="container">
+            <div id="newSite">
+                <button>Add Site</button>
+                <button>Ignore Site</button>
+                <fieldset>
+                    <legend>Site Folder</legend>
+                    <label for="title">Name</label><br />
+                    <input type="text" name="title" id="title" value="" /><br /><br />
+                    <label for="url">URL</label><br />
+                    http://<span id="wwwPrefix">www.</span><input type="text" name="url" id="url" value="" /><br /><br />
+                </fieldset>
+                <fieldset>
+                    <legend>Site Environments</legend>
+                    <label for="liveTitle">Live Site Title</label><br />
+                    <input type="text" name="liveTitle" id="liveTitle" value="Live" /><br /><br />
+                    <label for="liveUrl">Live Site URL</label><br />
+                    http://<span id="liveUrlIP"></span><input type="text" name="liveUrl" id="liveUrl" value="" style="width: 50px;" /><span id="liveUrlSite"></span><br /><br />
+                    <label for="devTitle">Dev Site Title</label><br />
+                    <input type="text" name="devTitle" id="devTitle" value="Development" /><br /><br />
+                    <label for="devUrl">Live Site URL</label><br />
+                    http://<span id="devUrlIP"></span><input type="text" name="devUrl" id="devUrl" value="" style="width: 50px;" /><span id="devUrlSite"></span><br /><br />
+                </fieldset>
+            </div>
+            <div id="sites">
+                <div id="sitesTree"></div>
+            </div>
+        </div>
+    </body>
+</html>

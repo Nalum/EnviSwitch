@@ -1,0 +1,21 @@
+{
+    "name"              : "EnviSwitch",
+    "version"           : "0.3.0",
+    "description"       : "EnviSwitch allowing you to switch between your web site environments.",
+    "options_page"      : "options.html",
+    "background_page"   : "background.html",
+    "page_action"       : {
+        "popup"         : "page_action.html",
+        "default_title" : "EnviSwitch",
+        "default_icon"	: "images/switch_16.png"
+    },
+    "permissions"		: [
+    	"tabs",
+    	"unlimited_storage"
+    ],
+    "icons"				: {
+    	"16"	: "images/switch_16.png",
+       	"48"	: "images/switch_48.png",
+      	"128"	: "images/switch_128.png"
+	}
+}
