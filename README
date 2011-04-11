@@ -2,7 +2,7 @@ I have been looking for something to write for a while and thought this would be
 
 The basic idea behind it is that you can set up a website folder which will then have multiple site environments added to it. These environments should, ideally, be for the same domain with a different sub domain e.g. www.testsite.com, test.testsite.com, dev.testsite.com, etc...
 
-When installed open up the options page of the extension and you should see a box with EnviSwitch? Root in it, right click on that to get a menu to add a new site folder.
+When installed open up the options page of the extension and you should see a box with EnviSwitch Root in it, right click on that to get a menu to add a new site folder.
 
 When adding a new site folder you want to set up the name and site address, the site address would be the domain name only e.g. testsite.com not http://www.testsite.com or www.testsite.com.
 
